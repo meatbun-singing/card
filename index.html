@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>分享名片｜蔡仲殷（肉包）</title>
+<style>
+body{margin:0;font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;background:#FDF9F3;color:#221D18;
+  min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;text-align:center}
+img{width:120px;height:120px;border-radius:50%;object-fit:cover;background:#eee}
+h1{font-size:22px;margin:16px 0 4px}p{color:#80735F;margin:0 0 28px;line-height:1.6}
+button{width:100%;max-width:320px;padding:16px;border:0;border-radius:10px;background:#DD6830;color:#fff;font-size:18px;font-weight:700}
+button:disabled{opacity:.5}#msg{margin-top:16px;color:#80735F;font-size:14px;min-height:20px}
+</style></head><body>
+<img id="pic" alt="">
+<h1>蔡仲殷（肉包）</h1>
+<p>發聲・歌唱教學<br>按下面選朋友，就會傳一張可以滑的名片給他</p>
+<button id="go" disabled>分享名片</button>
+<div id="msg">載入中…</div>
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<script>
+const LIFF_ID = "2011786200-FHwV4Fpj";
+const BOT_URL = "https://script.google.com/macros/s/AKfycbxzFYulrfMLCQKQ3uwE0ITJd6H2xXTlQcP57RMxfzF5LJbJv_e-6YcbFnXcRvPQQfh1lQ/exec";
+const go = document.getElementById('go'), msg = document.getElementById('msg');
+Promise.all([
+  liff.init({ liffId: LIFF_ID }),
+  fetch(BOT_URL + '?card=1').then(r => r.json())
+]).then(([, card]) => {
+  const hero = card.contents.contents[0].hero;
+  if (hero) document.getElementById('pic').src = hero.url;
+  if (!liff.isApiAvailable('shareTargetPicker')) { msg.textContent = '請用手機 LINE 打開這個頁面'; return; }
+  go.disabled = false; msg.textContent = '';
+  go.onclick = async () => {
+    try {
+      const r = await liff.shareTargetPicker([card]);
+      if (r) { msg.textContent = '已傳出 ✅'; setTimeout(() => liff.closeWindow(), 800); }
+      else msg.textContent = '沒有傳（取消了）';
+    } catch (e) { msg.textContent = '傳送失敗：' + e.message; }
+  };
+}).catch(e => { msg.textContent = '載入失敗：' + e.message; });
+</script></body></html>
