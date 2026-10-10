@@ -39,7 +39,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.8 -apple-system,
 .wrap{max-width:720px;margin:0 auto;padding:0 20px}
 section{padding:52px 0}
 h1,h2,h3{line-height:1.35;margin:0 0 .6em}
-h1{font-size:clamp(30px,7vw,44px);letter-spacing:.01em}
+h1{font-size:clamp(28px,6vw,38px);letter-spacing:.01em;text-wrap:balance}
 h2{font-size:clamp(22px,5vw,28px)}
 h3{font-size:18px}
 p{margin:0 0 1em}
@@ -53,11 +53,11 @@ header.top b{font-size:16px}
 header.top a.btn{padding:8px 18px;font-size:15px}
 .hero{padding:44px 0 56px}
 .hero .grid{display:grid;gap:28px;align-items:center}
-.hero img{width:100%;max-width:300px;border-radius:20px;display:block;margin:0 auto;box-shadow:0 12px 32px rgba(0,0,0,.15)}
+.hero img{width:100%;max-width:300px;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:20px;display:block;margin:0 auto;box-shadow:0 12px 32px rgba(0,0,0,.15)}
 .hero .tag{color:var(--accent);font-weight:700;font-size:15px;letter-spacing:.08em;margin-bottom:10px}
 .hero .lead{font-size:19px;color:var(--mute)}
 .hero .cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:22px}
-@media(min-width:720px){.hero .grid{grid-template-columns:1.3fr 1fr}}
+@media(min-width:720px){.hero .grid{grid-template-columns:1.4fr 1fr}}
 ul.pain{list-style:none;padding:0;margin:0;display:grid;gap:10px}
 ul.pain li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
 ul.pain li::before{content:"「";color:var(--accent)}
