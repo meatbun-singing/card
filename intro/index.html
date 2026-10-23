@@ -66,6 +66,8 @@ ul.pain{list-style:none;padding:0;margin:0;display:grid;gap:10px}
 ul.pain li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px}
 ul.pain li::before{content:"「";color:var(--accent)}
 ul.pain li::after{content:"」";color:var(--accent)}
+ul.pain.more li::before,ul.pain.more li::after{content:none}
+ul.pain.more a{color:var(--ink)}
 .dark{background:var(--dark);color:var(--dark-ink)}
 .dark .mute{color:#b8ac9e}
 .steps{display:grid;gap:14px;counter-reset:s;padding:0;list-style:none;margin:0}
@@ -179,6 +181,17 @@ body{padding-bottom:70px}
       <a href="https://www.instagram.com/meatbun.singing/">Instagram @meatbun.singing</a>
       <a href="https://www.threads.com/@meatbun.singing">Threads</a>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>聲音常見問題</h2>
+    <ul class="pain more">
+      <li><a href="hoarse/">講話一整天，喉嚨就啞</a></li>
+      <li><a href="quiet/">聲音放不大，也撐不久</a></li>
+      <li><a href="high-notes/">唱高音卡住，唱完喉嚨又緊又累</a></li>
+    </ul>
   </div>
 </section>
 
