@@ -29,6 +29,7 @@
 - [講話一整天，喉嚨就啞](https://meatbun-singing.github.io/card/intro/hoarse/)：老師、講師、業務、客服常見的狀況與上課先處理什麼
 - [聲音放不大，也撐不久](https://meatbun-singing.github.io/card/intro/quiet/)：聲音太小聲、一大聲喉嚨就緊
 - [唱高音卡住，唱完喉嚨又緊又累](https://meatbun-singing.github.io/card/intro/high-notes/)：高音、換聲點、唱完喉嚨痛
+- [第一次來，30 分鐘會做什麼](https://meatbun-singing.github.io/card/intro/first-lesson/)：體驗課（聲音結構檢測）的流程、適合誰、怎麼預約
 
 ## 連結
 
