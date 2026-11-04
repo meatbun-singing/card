@@ -30,7 +30,10 @@ h1,h2,h3{line-height:1.35;margin:0 0 .6em}
 h1{font-size:clamp(26px,6vw,36px);text-wrap:balance}
 h2{font-size:clamp(20px,5vw,24px);margin-top:1.8em}
 p{margin:0 0 1em}
-a{color:var(--accent)}
+a{color:var(--accent);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.btn:focus-visible{outline-color:var(--ink);border-radius:999px}
+::selection{background:var(--accent);color:var(--accent-ink)}
 .mute{color:var(--mute)}
 .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:700;padding:13px 26px;border-radius:999px}
 header.top{padding:14px 0;border-bottom:1px solid var(--line)}
